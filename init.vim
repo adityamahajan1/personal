@@ -2,13 +2,25 @@
 "Vim-Plug Installation directory :: ~/.local/share/nvim/site/autoload/plug.vim
 "Plugin Installation directory :: ~/.config/nvim/plugged/
 call plug#begin()
+
+" Theme
 Plug 'morhetz/gruvbox'
+
+"Directory tree
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'vim-airline/vim-airline'
-call plug#end()
 
+"File search
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+"Status bar
+Plug 'vim-airline/vim-airline'
+
+"Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+call plug#end()
 
 "Section: Themes/ColorSchemes
 autocmd vimenter * colorscheme gruvbox
@@ -16,9 +28,9 @@ autocmd vimenter * colorscheme gruvbox
 "Section: Key Maps
 "Note :: C -> Ctrl ; w -> window ; p -> previous
 let mapleader=" "
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFocus<CR>
-nnoremap <leader>r :NERDTreeFocus<CR>r<C-w><C-p>
+nnoremap <silent> <C-t> :NERDTreeToggle<CR>
+nnoremap <silent> <leader>f :NERDTreeFocus<CR>
+nnoremap <silent> <leader>r :NERDTreeFocus<CR>r<C-w><C-p>
 nnoremap <silent> <C-s> :FZF<CR>
 
 "Section: Vim config
