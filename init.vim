@@ -20,6 +20,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
+"Linting
+Plug 'dense-analysis/ale'
+
+"Code completion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
 call plug#end()
 
 "Section: Themes/ColorSchemes
@@ -28,9 +34,9 @@ autocmd vimenter * colorscheme gruvbox
 "Section: Key Maps
 "Note :: C -> Ctrl ; w -> window ; p -> previous
 let mapleader=" "
-nnoremap <silent> <C-t> :NERDTreeToggle<CR>
-nnoremap <silent> <leader>f :NERDTreeFocus<CR>
-nnoremap <silent> <leader>r :NERDTreeFocus<CR>r<C-w><C-p>
+nnoremap <silent> <leader>,t :NERDTreeToggle<CR>
+nnoremap <silent> <leader>,f :NERDTreeFocus<CR>
+nnoremap <silent> <leader>,r :NERDTreeFocus<CR>r<C-w><C-p>
 nnoremap <silent> <C-s> :FZF<CR>
 
 "Section: Vim config
@@ -63,3 +69,14 @@ let g:NERDTreeIndicatorMapCustom = {
 "About :: status/footerlinebar
 let g:airline_powerline_fonts = 1
 "Config end :: Xuyuanp/vim-airline
+
+"Config begin :: dense-analysis/ale
+"About :: status indicators
+let g:ale_sign_error = '✘✘'
+let g:ale_sign_warning = '⚠⚠'
+"Config end :: dense-analysis/ale
+
+"Config begin :: Shougo/deoplete.nvim
+""About :: enable plugin on startup
+let g:deoplete#enable_at_startup = 1
+"Config end :: Shougo/deoplete.nvim
