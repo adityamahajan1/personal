@@ -21,10 +21,16 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 "Linting
-Plug 'dense-analysis/ale'
+"Plug 'dense-analysis/ale'
 
 "Code completion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+"Intellisense & linting, alternative to deoplete & ale
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+"Dart language syntax highlight
+Plug 'dart-lang/dart-vim-plugin'
 
 call plug#end()
 
@@ -72,11 +78,11 @@ let g:airline_powerline_fonts = 1
 
 "Config begin :: dense-analysis/ale
 "About :: status indicators
-let g:ale_sign_error = '✘✘'
-let g:ale_sign_warning = '⚠⚠'
+"let g:ale_sign_error = '✘✘'
+"let g:ale_sign_warning = '⚠⚠'
 "Config end :: dense-analysis/ale
 
 "Config begin :: Shougo/deoplete.nvim
 ""About :: enable plugin on startup
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
 "Config end :: Shougo/deoplete.nvim
